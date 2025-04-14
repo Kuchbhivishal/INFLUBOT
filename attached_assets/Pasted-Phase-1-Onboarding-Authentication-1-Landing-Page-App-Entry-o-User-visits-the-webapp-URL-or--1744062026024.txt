@@ -1,0 +1,126 @@
+Phase 1: Onboarding & Authentication
+1.	Landing Page / App Entry:
+o	User visits the webapp URL or opens the mobile app.
+o	Sees a compelling value proposition (e.g., "Connect directly with your favourite influencers!").
+o	Clear "Login / Sign Up" button.
+o	(Optional: Browse influencers previews even before login to entice sign-up).
+2.	Login / Sign Up Options:
+o	User clicks "Login / Sign Up".
+o	Presented with choices:
+	"Continue with Google"
+	"Continue with Mobile Number"
+3.	Authentication Process:
+o	A) Google Login:
+	User clicks "Continue with Google".
+	Redirected to Google's OAuth screen.
+	User selects their Google account and grants necessary permissions (e.g., email, name, profile picture).
+	Redirected back to the webapp.
+	System Check:
+	New User: Account is automatically created using Google info. User might be prompted to set a username or agree to T&Cs. They are now logged in.
+	Existing User: System recognizes the Google account and logs the user in directly.
+	User lands on the main dashboard/influencer discovery page.
+o	B) Mobile Number Login:
+	User clicks "Continue with Mobile Number".
+	Enters their valid mobile number.
+	Clicks "Send OTP" (or similar).
+	System Check:
+	New User: System notes this is a new number.
+	Existing User: System identifies the existing account.
+	User receives an OTP via SMS.
+	Enters the received OTP on the verification screen.
+	Clicks "Verify OTP".
+	Post-Verification:
+	New User: Might be prompted to enter their Name/Username and agree to T&Cs. Account is created. They are now logged in.
+	Existing User: Logged in directly.
+	User lands on the main dashboard/influencer discovery page.
+Phase 2: Funding the Wallet
+1.	Accessing the Wallet:
+o	User navigates to their profile or a dedicated "Wallet" section within the app (accessible via menu/navigation bar).
+o	Sees their current wallet balance (initially ₹0.00 for new users).
+2.	Initiating Recharge:
+o	User clicks the "Recharge Wallet" or "Add Funds" button.
+3.	Enter Recharge Amount:
+o	User is prompted to enter the amount they want credited to their wallet (e.g., they enter 100).
+4.	Fee Calculation & Confirmation:
+o	The system calculates the total amount to be paid, including the convenience fee.
+o	Display to User (Crucial Step):
+	"Amount to add to wallet: ₹100.00"
+	"Convenience Fee: ₹50.00" (Clearly labelled)
+	"Total Amount Payable: ₹150.00"
+o	User sees a confirmation button like "Proceed to Pay ₹150.00".
+5.	Payment Gateway Integration:
+o	User clicks "Proceed to Pay".
+o	Redirected securely to the chosen Payment Gateway (e.g., Razorpay, Stripe, PayU, etc.).
+o	User selects their preferred payment method (UPI, Credit/Debit Card, Net Banking, etc.) on the gateway's interface.
+o	User completes the payment authorization.
+6.	Payment Confirmation & Wallet Update:
+o	Payment Gateway processes the transaction and sends a success or failure response back to your webapp.
+o	On Success:
+	Your webapp verifies the payment confirmation.
+	Updates the user's wallet balance by adding the recharge amount (e.g., adds ₹100). The ₹50 fee is recorded internally as revenue/service charge.
+	Displays a success message: "Recharge Successful! ₹100.00 added to your wallet. Current Balance: ₹[New Balance]."
+	Redirects the user back to the Wallet screen or the main dashboard.
+o	On Failure:
+	Displays an error message: "Payment Failed. Please try again or use a different payment method."
+	Redirects the user back to the recharge amount entry or Wallet screen.
+Phase 3: Finding and Interacting with Influencers
+1.	Discovering Influencers:
+o	User browses the app (dashboard, search, categories) to find influencers.
+o	Sees listings of influencers with key info like name, profile picture, niche, and Live Status Indicator.
+2.	Viewing Influencer Profile:
+o	User clicks on an influencer's profile.
+o	Sees detailed information: Bio, photos/videos, interaction rates (e.g., ₹X per minute for chat/call - this pricing info is essential), and a prominent, real-time Live Status Indicator (e.g., Green "LIVE" icon / Red "OFFLINE" icon).
+3.	Checking Availability & Initiating Interaction:
+o	A) Influencer is OFFLINE:
+	Chat: The "Chat" button might still be enabled.
+	User clicks "Chat".
+	A chat window opens.
+	User can type and send messages.
+	System Behaviour: Messages are likely queued. A chatbot might respond initially ("Hi! [Influencer Name] is currently offline but will see your message later.") or the message just sits there until the influencer logs in. No real-time conversation happens.
+	Audio/Video Call: The "Audio Call" and "Video Call" buttons are DISABLED (greyed out). A tooltip might appear on hover: "[Influencer Name] is currently offline."
+o	B) Influencer is LIVE:
+	Chat: The "Chat" button is enabled.
+	User clicks "Chat".
+	Chat window opens.
+	User sends a message.
+	The influencer (or their team managing the account) receives the message in real-time and can respond.
+	Wallet Deduction: Depending on your model, the user's wallet balance might start decreasing based on time spent in the active chat OR per message sent/received once the influencer engages. This needs to be clear to the user.
+	Audio/Video Call: The "Audio Call" and "Video Call" buttons are ENABLED.
+	User clicks the desired call button (e.g., "Video Call").
+	System Check: Does the user have sufficient wallet balance for at least a minimum duration (e.g., 1 minute)?
+	If Insufficient Balance: Show a pop-up: "Insufficient balance. Please recharge your wallet to start a call." Buttons remain enabled but clicking leads here.
+	If Sufficient Balance: Show a confirmation pop-up: "Start Video Call with [Influencer Name]? Cost: ₹[Rate]/minute. Your balance: ₹[Current Balance]." Buttons: "Confirm" / "Cancel".
+	User clicks "Confirm".
+	Call connection is initiated between user and influencer.
+	During Call:
+	Timer is displayed.
+	Wallet balance decreases in real-time (e.g., per minute or per second).
+	Low balance warnings appear (e.g., "Less than 2 minutes remaining").
+	Call automatically disconnects if balance hits zero.
+	Either user or influencer can end the call manually.
+4.	Ending Interaction:
+o	Call ends (manually or auto-disconnect). Chat window is closed.
+o	(Optional) Display a summary: "Call Duration: X mins. Total Cost: ₹Y. Remaining Balance: ₹Z."
+o	(Optional) Prompt user to rate the interaction/influencer.
+
+
+
+
+
+
+
+
+
+
+Key Considerations and Potential Enhancements:
+•	Clear Pricing: Display interaction costs (per minute/per message) very clearly on the influencer's profile beforethe user initiates contact.
+•	Fee Transparency: Ensure the fee structure during recharge is extremely clear and upfront, as shown in Step 7. A 50% fee is very high and needs justification or clear communication.
+•	Influencer Side Flow: You'll need a parallel flow for influencers: login, setting status (Live/Offline), managing incoming requests, viewing earnings, withdrawal process.
+•	Notifications: Allow users to "favorite" influencers and receive push notifications when they go live.
+•	Chatbot Functionality: Define the chatbot's role more clearly. Is it just for offline messages, or does it handle basic FAQs?
+•	Queueing System: If an influencer is Live but already on a call/busy chat, implement a waiting queue system.
+•	Call Quality Indicators: Show network strength during calls.
+•	History: Provide users with transaction history (recharges, spending) and interaction history (calls/chats made, duration, cost).
+•	Scheduling: Consider allowing users to request/book specific time slots with influencers (potentially at a premium rate).
+•	Moderation & Safety: Implement reporting features for inappropriate behavior and content moderation tools.
+

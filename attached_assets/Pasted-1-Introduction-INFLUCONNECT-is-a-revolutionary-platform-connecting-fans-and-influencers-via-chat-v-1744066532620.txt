@@ -1,0 +1,291 @@
+1. Introduction
+INFLUCONNECT is a revolutionary platform connecting fans and influencers via chat, voice, and video calls. It provides seamless interaction with influencers through real-time engagement. The platform also uses an AI-powered chatbot to mimic the influencers when they are offline. This documentation covers every single step, process, and workflow for both users and influencers.
+
+2. User Journey and Detailed Flow
+A. Home Page (Landing Page)
+First Interaction with the User:
+
+Page Overview:
+
+The landing page must have a clean, modern design, with clear CTA buttons like Login and Sign Up.
+
+A short tagline explains the core value proposition of the platform: "Connect with your favorite influencers—chat, voice, or video calls!".
+
+Design Considerations:
+
+Bright, engaging colors, but with a clean and minimalistic layout.
+
+Large hero image or animation that showcases people engaging with influencers.
+
+Brief explanation of the platform’s purpose with a direct call-to-action: “Get Started” or “Browse Influencers.”
+
+Features:
+
+Previews of influencers: Display featured influencers with names, profile pictures, status (Live/Offline), and their rate per minute. This gives users an idea of available talent.
+
+Prominent Buttons:
+
+Login/Sign Up at the top-right corner.
+
+Browse Influencers button for users to check out available influencers before signing up.
+
+Optionally show brief testimonials or how-to-use guides for new users.
+
+B. Login / Sign-Up Flow
+Login Page:
+
+Login Form:
+
+Email Login: Users enter their email and password.
+
+Google Authentication: A “Sign in with Google” button redirects users to OAuth for quick access.
+
+Phone Number Login: For users who prefer not using email, they can choose phone login.
+
+Forgot Password: A link for users to reset their password if they forget it.
+
+Sign-Up Option: If the user doesn’t have an account, they can Sign Up directly from this page.
+
+New User Sign-Up Process:
+
+Email and Password Creation: The user enters a valid email address, password, and username.
+
+OTP Verification: After submitting the email, an OTP is sent to their inbox.
+
+OTP Input: Once they enter the OTP, their account is verified, and they can proceed.
+
+Terms and Conditions: New users must accept Terms and Conditions before proceeding.
+
+Profile Customization: After registration, users are asked to fill out basic profile info (optional) like bio, profile picture, etc.
+
+Redirects to Explore Page.
+
+Returning User Login Process:
+
+Existing User Login: Users can log in using their email and password or use Google/Mobile login.
+
+Once logged in, the system verifies the credentials, and the user is directed to the Explore Page.
+
+C. Explore Page and Influencer Discovery
+Influencer Listings:
+
+Categories: Influencers are categorized based on niches such as lifestyle, fitness, entertainment, tech, etc. Users can filter by:
+
+Category (e.g., Fitness, Cooking, Gaming).
+
+Online/Offline Status: To only show Live influencers or those currently available for interaction.
+
+Follower Count: Display only influencers with a certain threshold of followers.
+
+Price per Minute: Show influencers based on their rate per minute for video/audio chat.
+
+Influencer Preview: Each influencer preview shows:
+
+Profile picture.
+
+Name.
+
+Status: Live or Offline (with real-time indicators).
+
+Followers count.
+
+Rate per minute (₹).
+
+Option to favorite the influencer.
+
+Influencer Profile:
+
+Details:
+
+Name, Expertise, Bio.
+
+Influencer’s Rates: Price per minute for chat, audio calls, and video calls.
+
+Most Popular Video: Display their most viewed video (short clip) for recognition.
+
+Availability: Show real-time status, whether the influencer is Live or Offline.
+
+Contact Buttons:
+
+Start Chat: Opens the chat window.
+
+Start Audio Call: If the influencer is online, it opens the audio call.
+
+Start Video Call: If the influencer is online, it opens the video call.
+
+Additional Options:
+
+Follow: Users can follow an influencer to get notifications when they go live or post updates.
+
+Report: Button to report inappropriate behavior.
+
+Rate: After interacting, users can rate the influencer (for feedback).
+
+Influencer Interaction Process:
+
+If Influencer is Online:
+
+User can start a chat or initiate a call (audio or video).
+
+Wallet Verification: Check if the user has enough funds for the selected service.
+
+Confirm and Start: If sufficient funds exist, the system asks for a confirmation to begin the interaction.
+
+Interaction Timer: A timer shows the duration of the call.
+
+Wallet Deduction: Real-time deductions from the wallet based on the time spent talking or messaging.
+
+Completion: After the call ends, a summary of time spent, cost incurred, and remaining balance is shown.
+
+If Influencer is Offline:
+
+Chat Functionality: If the influencer is offline, the chat button remains active. Users can send offline messages that the influencer will receive once they are online.
+
+AI Chatbot: The chatbot will simulate the influencer’s responses based on predefined scripts or AI learning.
+
+D. Wallet & Payment System
+Wallet Overview:
+
+Wallet Balance: Display the user's current wallet balance on the profile page.
+
+Recharge Option: A Recharge Button to add funds.
+
+Recharge Flow:
+
+Input Recharge Amount: User enters the desired amount to add to the wallet.
+
+Fees and Costs: The system calculates any convenience fees.
+
+Payment Gateway:
+
+Integration with UPI, Stripe, PayPal, or Debit/Credit Cards for seamless payments.
+
+Transaction Success: Upon successful payment, the wallet balance is updated.
+
+Low Wallet Alert:
+
+If the wallet balance is insufficient to start a conversation, a pop-up alert appears asking the user to recharge their wallet.
+
+E. Interaction Management (Chat, Audio, Video)
+Chat Window:
+
+Interface: The chat interface should resemble Instagram’s direct messages for a familiar feel.
+
+Message Bubbles: User messages appear on the right, and the influencer’s messages appear on the left.
+
+Real-Time Sync: Chat updates immediately as messages are sent.
+
+Offline Interaction: If the influencer is offline, the chatbot responds.
+
+Chat History: All previous messages should be stored, visible for users to reference.
+
+Video/Audio Calls:
+
+Call Interface:
+
+A clean interface with video of both the user and the influencer.
+
+Timer displays call duration.
+
+The end call button at the top.
+
+Real-Time Deductions: Wallet balance is updated as the session progresses (per minute or second).
+
+Call Ended:
+
+Once the session ends, a summary of the interaction is shown:
+
+Call Duration, Cost, Remaining Balance.
+
+An option to Rate the Interaction.
+
+F. Transaction History & Refunds
+Transaction History:
+
+View Transactions: Users can see a detailed history of wallet top-ups, purchases, and interactions.
+
+Refunds:
+
+Refund Request: If an interaction was cut short or the influencer did not show up, users can request a refund.
+
+Refund Processing: Refunds are credited automatically to the user’s wallet.
+
+Cancellation & No-Show Policy:
+
+If the user cancels a session, a cancellation fee is charged.
+
+If the influencer fails to attend, the user is refunded.
+
+G. Notifications & Alerts
+Push Notifications:
+
+Session Updates: Alerts when a booked session is confirmed or starts.
+
+Influencer Activity: Notifications when an influencer posts a new update or goes live.
+
+In-App Alerts:
+
+Low Wallet Balance: Alerts users when they have insufficient funds to start a session.
+
+Time Limits: When a call or chat is about to end, a warning appears.
+
+3. Influencer Dashboard and Features
+A. Influencer Profile Management
+Set Availability:
+
+Calendar View to manage and set available slots for user interaction.
+
+Option to Accept/Decline bookings based on availability.
+
+Content Feed:
+
+Influencers can post updates, images, videos, and promotional content.
+
+Engagement Analytics: Influencers can see who interacted with their posts and how often.
+
+B. Earnings Dashboard
+Real-Time Earnings Overview:
+
+Display earnings from chats/calls, including commission breakdown.
+
+Ability to withdraw earnings via payment gateways like PayPal or bank transfer.
+
+C. Privacy & Moderation Features
+Moderation Tools:
+
+Block/Report Users: Influencers can manage interactions by blocking or reporting inappropriate users.
+
+AI-Driven Content Moderation: Automatically detects inappropriate content in messages or calls.
+
+4. AI Chatbot Features
+Role of the Chatbot:
+
+When Offline: Acts as a stand-in for the influencer, answering pre-programmed questions.
+
+Personality Mimicking: Chatbot mimics the influencer’s communication style to provide a more realistic experience.
+
+Help Desk: The chatbot can also help users with issues like wallet recharge or booking sessions.
+
+5. Security and Authentication
+Authentication:
+
+OAuth 2.0 and JWT Tokens for secure login and session management.
+
+MFA (Multi-Factor Authentication) for influencers to secure their accounts.
+
+Encryption:
+
+End-to-End Encryption for all chat and call data.
+
+Screenshots/Screen Recording Protection:
+
+Implement technology to prevent users from taking screenshots or screen recordings during video calls or chat interactions.
+
+6. Admin Features
+User and Influencer Management:
+
+Admins can view user and influencer details, track interactions, and handle support requests.
+
+Platform Analytics:
+
+Detailed reports on user behavior, influencer engagement, and platform usage statistics.

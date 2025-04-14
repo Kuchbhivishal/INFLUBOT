@@ -1,0 +1,64 @@
+influencer-connect/
+│
+├── client/                     # Frontend (React or React Native)
+│   ├── public/
+│   ├── src/
+│   │   ├── assets/             # Static assets like icons, logos, images
+│   │   ├── components/         # Reusable UI components
+│   │   ├── pages/              # Main screens/pages
+│   │   │   ├── LandingPage/
+│   │   │   ├── LoginSignup/
+│   │   │   ├── Dashboard/
+│   │   │   ├── Wallet/
+│   │   │   ├── InfluencerProfile/
+│   │   │   └── ChatCall/
+│   │   ├── services/           # API calls (axios/fetch services)
+│   │   ├── hooks/              # Custom hooks (e.g., auth, wallet, chat)
+│   │   ├── contexts/           # React context for auth, user, wallet, etc.
+│   │   ├── utils/              # Helper functions (e.g., formatters, validators)
+│   │   ├── App.js
+│   │   └── index.js
+│
+├── server/                     # Backend (Node.js + Express)
+│   ├── src/
+│   │   ├── config/             # DB config, environment setup
+│   │   ├── controllers/        # Request handlers for routes
+│   │   │   ├── authController.js
+│   │   │   ├── userController.js
+│   │   │   ├── walletController.js
+│   │   │   ├── influencerController.js
+│   │   │   └── callController.js
+│   │   ├── middleware/         # Auth checks, error handling, rate limiting
+│   │   ├── models/             # Database schemas
+│   │   │   ├── User.js
+│   │   │   ├── Influencer.js
+│   │   │   ├── Wallet.js
+│   │   │   ├── Transaction.js
+│   │   │   └── Interaction.js
+│   │   ├── routes/             # API routes
+│   │   │   ├── authRoutes.js
+│   │   │   ├── userRoutes.js
+│   │   │   ├── walletRoutes.js
+│   │   │   ├── influencerRoutes.js
+│   │   │   └── callRoutes.js
+│   │   ├── services/           # Business logic
+│   │   ├── utils/              # Helper utilities
+│   │   └── app.js              # Express app init
+│   └── server.js               # Entry point
+│
+├── socket/                     # Real-time socket handlers
+│   ├── index.js
+│   └── chatHandler.js
+│   └── callHandler.js
+│
+├── database/                   # DB scripts, migrations (if using SQL)
+│   └── seed.js
+│
+├── mobile/                     # Optional: React Native app (if separate)
+│   └── ...similar structure to client/
+│
+├── scripts/                    # Deployment & utility scripts
+├── .env
+├── package.json
+├── README.md
+└── .gitignore
